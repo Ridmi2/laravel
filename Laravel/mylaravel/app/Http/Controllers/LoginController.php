@@ -34,7 +34,7 @@ class LoginController extends Controller
             // Attempt to log the user in
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
                 // Redirect to the index page after successful login
-                return redirect()->route('index'); // Redirect to index.blade.php
+                return redirect()->route('account.dashboard'); // Redirect to index.blade.php
             } else {
                 // Return an error if credentials are incorrect
                 return redirect()->route('account.login')->with('error', 'Either email or password is incorrect.');
